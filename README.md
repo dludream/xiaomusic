@@ -98,6 +98,8 @@ services:
 > [!TIP]
 > 隐藏玩法: 对小爱同学说播放歌曲小猪佩奇的故事，会先下载小猪佩奇的故事，然后再播放小猪佩奇的故事。
 
+更多功能见 [📝 文档汇总](https://github.com/hanxi/xiaomusic/issues/211)
+
 ## 🛠️ pip 方式安装运行
 
 ```shell
@@ -277,6 +279,7 @@ docker build -t xiaomusic .
 - [awesome-xiaoai](https://github.com/zzz6519003/awesome-xiaoai)
 - [微信小程序: XIAO晓音](https://github.com/F-loat/xiaoplayer)
 - [pure 主题 xiaomusicUI](https://github.com/52fisher/xiaomusicUI)
+- [移动端的播放器主题](https://github.com/52fisher/XMusicPlayer)
 - 所有帮忙调试和测试的朋友
 - 所有反馈问题和建议的朋友
 
