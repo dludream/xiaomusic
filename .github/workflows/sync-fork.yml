@@ -1,5 +1,4 @@
 name: Sync Fork
-
 on:
   schedule:
     - cron: '0 */6 * * *'  # 每6小时运行一次
@@ -8,16 +7,18 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions: # 明确设置权限
+      contents: write
     
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4  # 更新到最新的 v4 版本
       with:
         fetch-depth: 0
     
     - name: Configure Git
       run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
     
     - name: Add upstream remote
       run: |
@@ -32,5 +33,7 @@ jobs:
         git merge upstream/main --no-edit
     
     - name: Push changes
-      run: |
-        git push origin main
+      uses: ad-m/github-push-action@master  # 使用专门的推送action
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
